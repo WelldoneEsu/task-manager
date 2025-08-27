@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager - Dashboard</title>
+  <style>
+    .task.low { color: green; }
+    .task.medium { color: orange; }
+    .task.high { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Your Tasks</h1>
+  <form id="taskForm">
+    <input type="text" id="title" placeholder="Task title" required>
+    <select id="priority">
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select>
+    <button type="submit">Add Task</button>
+  </form>
+  <ul id="taskList"></ul>
+  <button id="logout">Logout</button>
+  <script src="script.js"></script>
+</body>
+</html>
