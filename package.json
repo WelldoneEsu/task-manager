@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node Backend/server.js",
+"    start": "node Backend/server.js",
     "dev": "nodemon Backend/server.js",
     "test": "jest --watchAll"
   },

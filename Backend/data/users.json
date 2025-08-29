@@ -1,7 +1,12 @@
 [
   {
-    "id": "1756261018964",
-    "name": "newuser",
-    "password": "$2b$10$o00pxkOLsqjeZA1R6lTIfOBJIdxjXNVpZ5jT0EWl7ajGnana2.7S2"
+    "id": "1756451308355",
+    "name": "john",
+    "password": "$2b$10$8qyQg2ibI3BYmqeGB8RsAOY7ccBG970QK3TFNASxKbbvRN03v9tRe"
+  },
+  {
+    "id": "1756453340758",
+    "name": "Welldone",
+    "password": "$2b$10$wuC91dJrRDEzirZ/8qPyMu4Feo0JdeDEyX1B7Hs6EmdoShit9.HpS"
   }
 ]

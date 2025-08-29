@@ -18,19 +18,20 @@ async function saveUsers(users) {
 // @desc Signup new user
 exports.signup = async (req, res) => {
   try {
-    const { name, password } = req.body;
+    let { name, password } = req.body;  // <== FIXED
 
     if (!name || !password) {
       return res.status(400).json({ error: "❌Name and password required" });
     }
 
+    name = name.trim().toLowerCase();
+
     const users = await getUsers();
 
-    if (users.find(u => u.name === name)) {
+    if (users.find(u => u.name.toLowerCase() === name)) {
       return res.status(400).json({ error: "❌Name already exists" });
     }
 
-    // 🔑 Hash password before saving
     const hashed = await bcrypt.hash(password, 10);
 
     const newUser = {
@@ -48,13 +49,16 @@ exports.signup = async (req, res) => {
   }
 };
 
+    
+
 // @desc Login user
 exports.login = async (req, res) => {
   try {
     const { name, password } = req.body;
     const users = await getUsers();
 
-    const user = users.find(u => u.name === name);
+    const cleanedName = name.trim().toLowerCase();
+    const user = users.find(u => u.name.toLowerCase() === cleanedName);
     if (!user) return res.status(400).json({ error: "❌Invalid name" });
 
     // 🔑 Compare plain password with hashed password
